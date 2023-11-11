@@ -7,7 +7,7 @@ import {
   GoCode,
   GoVerified
 } from 'react-icons/go'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { getUser } from '@/utils/api/githubEndPoints'
 import { verifyError } from '@/utils/helpers/axiosError'
