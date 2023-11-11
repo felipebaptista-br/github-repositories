@@ -1,9 +1,11 @@
 const isLocalStorageSupported = async () => {
     try {
-        const testKey = '__testKey__';
-        localStorage.setItem(testKey, testKey);
-        localStorage.removeItem(testKey);
-        return true;
+        if (typeof window !== 'undefined') {
+            const testKey = '__testKey__';
+            localStorage.setItem(testKey, testKey);
+            localStorage.removeItem(testKey);
+            return true;
+        }
     } catch (e) {
         return false;
     }
