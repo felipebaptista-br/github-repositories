@@ -1,0 +1,28 @@
+.ui-loader {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  animation: s4 4s infinite;
+}
+
+.ui-loader::before,
+.ui-loader::after {
+  content: "";
+  grid-area: 1/1;
+  border: 5px solid;
+  border-radius: 50%;
+  border-color: var(--purple) var(--purple) #0000 #0000;
+  mix-blend-mode: darken;
+  animation: s4 1s infinite linear;
+}
+
+.ui-loader::after {
+  border-color: #0000 #0000 var(--gray) var(--gray);
+  animation-direction: reverse;
+}
+
+@keyframes s4 {
+  100% {
+    transform: rotate(1turn)
+  }
+}
