@@ -12,7 +12,7 @@ const isLocalStorageSupported = async () => {
 };
 
 const getItem = (key) => {
-    if (isLocalStorageSupported() && validateTypeof) {
+    if (isLocalStorageSupported() && validateTypeof()) {
         const item = localStorage.getItem(key);
         try {
             return JSON.parse(item);
@@ -25,14 +25,14 @@ const getItem = (key) => {
 };
 
 const setItem = (key, value) => {
-    if (isLocalStorageSupported() && validateTypeof) {
+    if (isLocalStorageSupported() && validateTypeof()) {
         const jsonValue = JSON.stringify(value);
         localStorage.setItem(key, jsonValue);
     }
 };
 
 const removeItem = (key) => {
-    if (isLocalStorageSupported() && validateTypeof) {
+    if (isLocalStorageSupported() && validateTypeof()) {
         localStorage.removeItem(key);
     }
 };
