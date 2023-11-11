@@ -1,5 +1,6 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { getRepositories } from '@/utils/api/githubEndPoints'
 import { getItem } from '@/utils/storage/localStorage'
@@ -9,6 +10,7 @@ import Loader from '@/components/common/loader'
 import './style.css'
 
 export default function Dashboard() {
+    const router = useRouter()
     const user = getItem('auth')
     const [repos, setRepos] = useState()
 
@@ -34,7 +36,7 @@ export default function Dashboard() {
                         key={item.id}
                         title={item.name}
                         children={item.description}
-                        onClick={() => typeof window !== 'undefined' ? window.location.href = item.html_url : undefined}
+                        onClick={() => router.push(item.html_url)}
                         />
                     ))}
                 </div>) :
