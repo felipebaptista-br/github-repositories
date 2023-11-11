@@ -1,19 +1,22 @@
-import { validateTypeof } from "../validation/validateTypeof";
 
 const isLocalStorageSupported = async () => {
     try {
         const testKey = '__testKey__';
-        localStorage.setItem(testKey, testKey);
-        localStorage.removeItem(testKey);
-        return true;
+        if (typeof window !== 'undefined') {
+            localStorage.setItem(testKey, testKey);
+            localStorage.removeItem(testKey);
+            return true
+        } else {
+            return false
+        }
     } catch (e) {
         return false;
     }
 };
 
 const getItem = (key) => {
-    if (isLocalStorageSupported() && validateTypeof()) {
-        const item = localStorage.getItem(key);
+    if (isLocalStorageSupported() && typeof window !== 'undefined') {
+        const item = localStorage.getItem(key)
         try {
             return JSON.parse(item);
         } catch (error) {
@@ -25,14 +28,14 @@ const getItem = (key) => {
 };
 
 const setItem = (key, value) => {
-    if (isLocalStorageSupported() && validateTypeof()) {
+    if (isLocalStorageSupported() && typeof window !== 'undefined') {
         const jsonValue = JSON.stringify(value);
         localStorage.setItem(key, jsonValue);
     }
 };
 
 const removeItem = (key) => {
-    if (isLocalStorageSupported() && validateTypeof()) {
+    if (isLocalStorageSupported() && typeof window !== 'undefined') {
         localStorage.removeItem(key);
     }
 };
