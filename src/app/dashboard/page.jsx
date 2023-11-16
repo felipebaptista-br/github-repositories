@@ -1,6 +1,6 @@
 'use client'
 
-// import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { getRepositories } from '@/utils/api/githubEndPoints'
 import { getItem } from '@/utils/storage/localStorage'
@@ -10,17 +10,17 @@ import Loader from '@/components/common/loader'
 import './style.css'
 
 export default function Dashboard() {
-    // const router = useRouter()
+    const router = useRouter()
     const user = getItem('auth')
     const [repos, setRepos] = useState()
 
     useEffect(() => {
-        // const fetchApi = async () => {
-        //     const res = await getRepositories(user.login)
-        //     setRepos(res)
-        // }
+        const fetchApi = async () => {
+            const res = await getRepositories(user.login)
+            setRepos(res)
+        }
 
-        // fetchApi()
+        fetchApi()
     }, [])
 
     return (
@@ -36,7 +36,7 @@ export default function Dashboard() {
                             key={item.id}
                             title={item.name}
                             children={item.description}
-                            // onClick={() => typeof window !== 'undefined' ? router.push(item.html_url) : undefined}
+                            onClick={() => typeof window !== 'undefined' ? router.push(item.html_url) : undefined}
                         />
                     ))}
                 </div>) :
