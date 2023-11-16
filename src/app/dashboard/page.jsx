@@ -33,10 +33,10 @@ export default function Dashboard() {
                 <div className='dashboard-content'>
                     {repos.map((item) => (
                         <Card
-                        key={item.id}
-                        title={item.name}
-                        children={item.description}
-                        onClick={() => typeof window !== 'undefined' ? router.push(item.html_url) : undefined}
+                            key={item.id}
+                            title={item.name}
+                            children={item.description}
+                            // onClick={() => typeof window !== 'undefined' ? router.push(item.html_url) : undefined}
                         />
                     ))}
                 </div>) :
