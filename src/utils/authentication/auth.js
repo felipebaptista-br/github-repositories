@@ -21,6 +21,8 @@ const authLoginNavigation = () => {
 
     if (!authLogin) {
         return router.push('/')
+    } else {
+        return true
     }
 }
 
