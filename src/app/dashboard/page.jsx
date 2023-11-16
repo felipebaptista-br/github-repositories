@@ -36,7 +36,7 @@ export default function Dashboard() {
                         key={item.id}
                         title={item.name}
                         children={item.description}
-                        onClick={() => router.push(item.html_url)}
+                        onClick={() => typeof window !== 'undefined' ? router.push(item.html_url) : undefined}
                         />
                     ))}
                 </div>) :
