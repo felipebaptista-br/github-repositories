@@ -15,12 +15,12 @@ export default function Dashboard() {
     const [repos, setRepos] = useState()
 
     useEffect(() => {
-        const fetchApi = async () => {
-            const res = await getRepositories(user.login)
-            setRepos(res)
-        }
+        // const fetchApi = async () => {
+        //     const res = await getRepositories(user.login)
+        //     setRepos(res)
+        // }
 
-        fetchApi()
+        // fetchApi()
     }, [])
 
     return (
