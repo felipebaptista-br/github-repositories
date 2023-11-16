@@ -16,13 +16,12 @@ const authLogin = () => {
     return result
 }
 
-const authLoginNavigation = async () => {
+const authLoginNavigation = () => {
     const router = useRouter()
 
     if (!authLogin) {
-        router.push('/')
+        return router.push('/')
     }
-
 }
 
 export { authLogin, authLoginNavigation };
