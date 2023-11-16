@@ -1,3 +1,4 @@
+'use client'
 
 import { validateCharacter } from '@/utils/validation/validateCharacter'
 import Button from '@/components/common/button'
