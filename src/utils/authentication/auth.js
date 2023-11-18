@@ -1,6 +1,5 @@
 'use client'
 
-import { useRouter } from 'next/navigation'
 import { getItem } from '../storage/localStorage'
 
 const authLogin = () => {
@@ -16,14 +15,4 @@ const authLogin = () => {
     return result
 }
 
-const authLoginNavigation = () => {
-    const router = useRouter()
-
-    if (!authLogin) {
-        return router.push('/')
-    } else {
-        return true
-    }
-}
-
-export { authLogin, authLoginNavigation };
+export { authLogin };

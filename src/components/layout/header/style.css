@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(90deg, var(--purple) 0%, #f75a68 100%);
+    background: #121212;
 }
 
 .header-content {

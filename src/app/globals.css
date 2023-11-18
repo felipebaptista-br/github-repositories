@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
-  --back: #09090A;
+  --black: #09090A;
   --white: #FFFFFF;
   --gray: #C4C4CC;
   --purple: #996DFF;
@@ -15,7 +15,7 @@
 }
 
 body {
-  background-color: var(--back);
+  background-color: var(--black);
 }
 
 a {
