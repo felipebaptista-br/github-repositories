@@ -1,12 +1,21 @@
-'use client'
+'use client';
 
-import { useRouter } from "next/navigation"
-import { authLogin } from "@/utils/authentication/auth"
-import Header from "@/components/layout/header"
-import Footer from "@/components/layout/footer"
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { authLogin } from '@/utils/authentication/auth';
+import Header from '@/components/layout/header';
+import Footer from '@/components/layout/footer';
 
-export default function RootLayout({ children }) {
-  const router = useRouter()
+export default function RootLayout({
+  children
+}) {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!authLogin()) {
+      router.push('/');
+    }
+  }, []);
 
   if (authLogin()) {
     return (
@@ -15,8 +24,8 @@ export default function RootLayout({ children }) {
         {children}
         <Footer />
       </div>
-    )
-  } else {
-    router.push('/')
+    );
   }
+
+  return null;
 }
