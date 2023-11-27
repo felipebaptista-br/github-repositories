@@ -10,14 +10,15 @@ export default function RootLayout({
   children
 }) {
   const router = useRouter();
+  const auth = authLogin()
 
   useEffect(() => {
-    if (!authLogin()) {
+    if (!auth) {
       router.push('/');
     }
   }, []);
 
-  if (authLogin()) {
+  if (auth) {
     return (
       <div>
         <Header />

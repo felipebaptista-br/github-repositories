@@ -1,10 +1,10 @@
 
 import './style.css'
 
-export default function Button({ children, onClick, onChange, className, style }) {
+export default function Button({ children, type, onClick, onChange, className, style }) {
 
     return <button
-        className={`ui-button ${className}`}
+        className={`ui-button ui-button-${type} ${className}`}
         onClick={onClick}
         onChange={onChange}
         style={style}

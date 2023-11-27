@@ -1,0 +1,48 @@
+.block-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    color: var(--white);
+    background-color: #121212;
+    border: 3px solid var(--purple);
+    border-radius: 10px;
+    padding: 8px 25px;
+}
+
+.block-main:hover {
+    transition: .4s;
+    background-color: var(--black);
+}
+
+.block-children {
+    width: 33%;
+    text-align: center;
+}
+
+.block-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.block-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.block-date {
+    color: var(--gray);
+}
+
+@media screen and (max-width: 1150px) {
+    .block-date {
+        display: none;
+    }
+
+    .block-children {
+        width: 70%;
+    }
+}

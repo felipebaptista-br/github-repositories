@@ -5,7 +5,7 @@ import Button from '@/components/common/button'
 
 import './style.css'
 
-export default function Card({ title, children, language, onClick }) {
+export default function Card({ title, children, onClick }) {
     const validChildren = validateCharacter(children, 100)
 
     return (
@@ -15,6 +15,7 @@ export default function Card({ title, children, language, onClick }) {
                 <p>{children ? validChildren : 'Sem descrição'}</p>
             </section>
             <Button
+                type={1}
                 children='ACESSAR'
                 className='card-button'
                 onClick={onClick}

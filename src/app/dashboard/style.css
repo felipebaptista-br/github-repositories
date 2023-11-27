@@ -1,5 +1,5 @@
 .dashboard-main {
-    padding: 100px 0px;
+    padding: 125px 0px;
 }
 
 .dashboard-main h3 {
@@ -31,7 +31,7 @@
 
 @media screen and (max-width: 1150px) {
     .dashboard-main {
-        padding: 65px 0px;
+        padding: 85px 0px;
     }
 
     .dashboard-content {

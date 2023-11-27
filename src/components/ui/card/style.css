@@ -26,8 +26,3 @@
     align-items: center;
     justify-content: center;
 }
-
-.card-button:hover {
-    transition: .4s;
-    background-color: #6e30ff;
-}
